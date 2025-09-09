@@ -214,27 +214,35 @@ export default function Index() {
         <motion.h2 initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-3xl md:text-4xl font-extrabold mb-10">
           How It Works
         </motion.h2>
-        <div className="grid lg:grid-cols-3 gap-6">
-          {[
-            { step: 1, title: "Create School/Parent Account", desc: "Set up your school fleet or join as a parent.", color: "from-amber-400 to-orange-500" },
-            { step: 2, title: "Add Students & Routes", desc: "Assign buses, set geofences and guardians.", color: "from-blue-500 to-teal-400" },
-            { step: 3, title: "Track & Protect", desc: "Live GPS, attendance, and instant safety alerts.", color: "from-emerald-400 to-teal-500" },
-          ].map((s, i) => (
-            <motion.div key={s.step} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.08 }}>
-              <Card className="h-full">
-                <CardContent className="p-6 flex flex-col h-full">
-                  <div className={`h-14 w-14 rounded-xl bg-gradient-to-br ${s.color} text-white grid place-items-center font-extrabold mb-4`}>
-                    {s.step}
-                  </div>
-                  <h3 className="font-semibold text-lg">{s.title}</h3>
-                  <p className="text-sm text-muted-foreground mt-1">{s.desc}</p>
-                  <div className="mt-auto pt-4">
-                    <div className={`h-24 w-full rounded-xl bg-gradient-to-br ${s.color} opacity-90`} />
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+        <div className="relative">
+          {/* horizontal connector on desktop */}
+          <div className="hidden lg:block absolute left-0 right-0 top-10 h-1 bg-gradient-to-r from-amber-200 via-sky-200 to-teal-200 rounded-full" />
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              { step: 1, icon: IdCard, title: "Create School/Parent Account", desc: "Set up your school fleet or join as a parent.", color: "from-amber-400 to-orange-500" },
+              { step: 2, icon: MapPin, title: "Add Students & Routes", desc: "Assign buses, set geofences and guardians.", color: "from-blue-500 to-teal-400" },
+              { step: 3, icon: ShieldCheck, title: "Track & Protect", desc: "Live GPS, attendance, and safety alerts.", color: "from-emerald-400 to-teal-500" },
+            ].map((s, i) => (
+              <motion.div key={s.step} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.08 }} className="relative">
+                {/* desktop connector dots */}
+                <div className="hidden lg:block absolute -top-1 left-1/2 -translate-x-1/2 h-3 w-3 rounded-full bg-white ring-2 ring-offset-2 ring-offset-background ring-sky-300" />
+                <Card className="h-full">
+                  <CardContent className="p-6 flex flex-col h-full">
+                    <div className={`h-14 w-14 rounded-xl bg-gradient-to-br ${s.color} text-white grid place-items-center font-extrabold mb-4`}>
+                      <s.icon className="h-7 w-7" />
+                    </div>
+                    <h3 className="font-semibold text-lg">{s.title}</h3>
+                    <p className="text-sm text-muted-foreground mt-1">{s.desc}</p>
+                    <div className="mt-auto pt-4">
+                      <div className={`h-24 w-full rounded-xl bg-gradient-to-br ${s.color} opacity-90`} />
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+          {/* mobile vertical line */}
+          <div className="md:hidden absolute left-4 top-14 bottom-4 w-1 bg-gradient-to-b from-amber-200 via-sky-200 to-teal-200 rounded-full" />
         </div>
       </section>
 
