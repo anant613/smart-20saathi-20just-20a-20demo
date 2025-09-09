@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export default function Header() {
-  const navItem = ({ isActive }: { isActive: boolean }) =>
+  const navItem = ({ isActive }) =>
     cn(
       "px-3 py-2 text-sm font-medium rounded-md transition-colors",
       isActive ? "text-foreground bg-accent/20" : "text-muted-foreground hover:text-foreground hover:bg-accent/10",
