@@ -68,38 +68,15 @@ function BusIllustration() {
         </g>
 
         {/* Students near bus with QR code */}
-        <g transform="translate(430,98)">
-          {/* Student 1 */}
-          <g>
-            <circle cx="0" cy="0" r="7" fill="#facc15" />
-            <rect x="-9" y="6" width="18" height="12" rx="2" fill="#ffffff" stroke="#e5e7eb" />
-            <rect x="-1" y="6" width="2" height="12" fill="#1E90FF" />
-            <rect x="-8" y="18" width="16" height="10" rx="2" fill="#1e3a8a" />
-          </g>
-          {/* Student 2 */}
-          <g transform="translate(24,0)">
-            <circle cx="0" cy="0" r="7" fill="#facc15" />
-            <rect x="-9" y="6" width="18" height="12" rx="2" fill="#ffffff" stroke="#e5e7eb" />
-            <rect x="-1" y="6" width="2" height="12" fill="#1E90FF" />
-            <rect x="-8" y="18" width="16" height="10" rx="2" fill="#1e3a8a" />
-          </g>
-          {/* Student 3 */}
-          <g transform="translate(48,0)">
-            <circle cx="0" cy="0" r="7" fill="#facc15" />
-            <rect x="-9" y="6" width="18" height="12" rx="2" fill="#ffffff" stroke="#e5e7eb" />
-            <rect x="-1" y="6" width="2" height="12" fill="#1E90FF" />
-            <rect x="-8" y="18" width="16" height="10" rx="2" fill="#1e3a8a" />
-          </g>
-        </g>
-
-        {/* QR board */}
-        <g transform="translate(480,72)">
-          <rect x="0" y="0" width="30" height="30" rx="4" fill="#ffffff" stroke="#111827" />
-          <rect x="4" y="4" width="6" height="6" fill="#111827" />
-          <rect x="20" y="4" width="6" height="6" fill="#111827" />
-          <rect x="4" y="20" width="6" height="6" fill="#111827" />
-          <rect x="16" y="16" width="4" height="4" fill="#111827" />
-          <rect x="24" y="24" width="2" height="2" fill="#111827" />
+        {/* Students moved inside bus (in windows) and QR poster inside door */}
+        <g transform="translate(352,64)">
+          {/* QR inside door window */}
+          <rect x="0" y="0" width="24" height="24" rx="3" fill="#ffffff" stroke="#111827" />
+          <rect x="3" y="3" width="5" height="5" fill="#111827" />
+          <rect x="16" y="3" width="5" height="5" fill="#111827" />
+          <rect x="3" y="16" width="5" height="5" fill="#111827" />
+          <rect x="12" y="12" width="3" height="3" fill="#111827" />
+          <rect x="20" y="20" width="2" height="2" fill="#111827" />
         </g>
       </g>
     </svg>
