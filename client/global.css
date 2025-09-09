@@ -22,16 +22,16 @@
     --popover-foreground: 222.2 84% 4.9%;
 
     /* Brand colors: Yellow (#FFD700), Blue (#1E90FF), Teal (#20C997) */
-    --primary: 51 100% 50%;            /* Yellow */
+    --primary: 51 100% 50%; /* Yellow */
     --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 209 100% 57%;         /* Blue */
+    --secondary: 209 100% 57%; /* Blue */
     --secondary-foreground: 210 40% 98%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 162 72% 45%;             /* Teal */
+    --accent: 162 72% 45%; /* Teal */
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 84.2% 60.2%;
@@ -103,20 +103,43 @@
 
   /* Custom animations for Smart Saathi */
   @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-12px);
+    }
   }
   @keyframes drive {
-    0% { transform: translateX(-20%); }
-    100% { transform: translateX(120%); }
+    0% {
+      transform: translateX(-20%);
+    }
+    100% {
+      transform: translateX(120%);
+    }
   }
   @keyframes wave {
-    0%, 100% { transform: rotate(0deg); }
-    50% { transform: rotate(12deg); }
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(12deg);
+    }
   }
 
-  .animate-float-slow { animation: float 12s ease-in-out infinite; }
-  .animate-float-slower { animation: float 18s ease-in-out infinite; }
-  .animate-drive { animation: drive 18s linear infinite; }
-  .animate-wave { animation: wave 2s ease-in-out infinite; transform-origin: top center; }
+  .animate-float-slow {
+    animation: float 12s ease-in-out infinite;
+  }
+  .animate-float-slower {
+    animation: float 18s ease-in-out infinite;
+  }
+  .animate-drive {
+    animation: drive 18s linear infinite;
+  }
+  .animate-wave {
+    animation: wave 2s ease-in-out infinite;
+    transform-origin: top center;
+  }
 }

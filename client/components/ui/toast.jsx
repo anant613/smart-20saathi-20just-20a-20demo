@@ -6,7 +6,10 @@ import { cn } from "@/lib/utils";
 
 const ToastProvider = ToastPrimitives.Provider;
 
-const ToastViewport = React.forwardRef(function ToastViewport({ className, ...props }, ref) {
+const ToastViewport = React.forwardRef(function ToastViewport(
+  { className, ...props },
+  ref,
+) {
   return (
     <ToastPrimitives.Viewport
       ref={ref}
@@ -22,17 +25,36 @@ ToastViewport.displayName = ToastPrimitives.Viewport.displayName;
 
 const toastVariants = cva(
   "group pointer-events-auto relative flex w-full items-center justify-between space-x-4 overflow-hidden rounded-md border p-6 pr-8 shadow-lg transition-all data-[swipe=cancel]:translate-x-0 data-[swipe=end]:translate-x-[var(--radix-toast-swipe-end-x)] data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[swipe=move]:transition-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[swipe=end]:animate-out data-[state=closed]:fade-out-80 data-[state=closed]:slide-out-to-right-full data-[state=open]:slide-in-from-top-full data-[state=open]:sm:slide-in-from-bottom-full",
-  { variants: { variant: { default: "border bg-background text-foreground", destructive: "destructive group border-destructive bg-destructive text-destructive-foreground" } }, defaultVariants: { variant: "default" } },
+  {
+    variants: {
+      variant: {
+        default: "border bg-background text-foreground",
+        destructive:
+          "destructive group border-destructive bg-destructive text-destructive-foreground",
+      },
+    },
+    defaultVariants: { variant: "default" },
+  },
 );
 
-const Toast = React.forwardRef(function Toast({ className, variant, ...props }, ref) {
+const Toast = React.forwardRef(function Toast(
+  { className, variant, ...props },
+  ref,
+) {
   return (
-    <ToastPrimitives.Root ref={ref} className={cn(toastVariants({ variant }), className)} {...props} />
+    <ToastPrimitives.Root
+      ref={ref}
+      className={cn(toastVariants({ variant }), className)}
+      {...props}
+    />
   );
 });
 Toast.displayName = ToastPrimitives.Root.displayName;
 
-const ToastAction = React.forwardRef(function ToastAction({ className, ...props }, ref) {
+const ToastAction = React.forwardRef(function ToastAction(
+  { className, ...props },
+  ref,
+) {
   return (
     <ToastPrimitives.Action
       ref={ref}
@@ -46,7 +68,10 @@ const ToastAction = React.forwardRef(function ToastAction({ className, ...props 
 });
 ToastAction.displayName = ToastPrimitives.Action.displayName;
 
-const ToastClose = React.forwardRef(function ToastClose({ className, ...props }, ref) {
+const ToastClose = React.forwardRef(function ToastClose(
+  { className, ...props },
+  ref,
+) {
   return (
     <ToastPrimitives.Close
       ref={ref}
@@ -63,14 +88,40 @@ const ToastClose = React.forwardRef(function ToastClose({ className, ...props },
 });
 ToastClose.displayName = ToastPrimitives.Close.displayName;
 
-const ToastTitle = React.forwardRef(function ToastTitle({ className, ...props }, ref) {
-  return <ToastPrimitives.Title ref={ref} className={cn("text-sm font-semibold", className)} {...props} />;
+const ToastTitle = React.forwardRef(function ToastTitle(
+  { className, ...props },
+  ref,
+) {
+  return (
+    <ToastPrimitives.Title
+      ref={ref}
+      className={cn("text-sm font-semibold", className)}
+      {...props}
+    />
+  );
 });
 ToastTitle.displayName = ToastPrimitives.Title.displayName;
 
-const ToastDescription = React.forwardRef(function ToastDescription({ className, ...props }, ref) {
-  return <ToastPrimitives.Description ref={ref} className={cn("text-sm opacity-90", className)} {...props} />;
+const ToastDescription = React.forwardRef(function ToastDescription(
+  { className, ...props },
+  ref,
+) {
+  return (
+    <ToastPrimitives.Description
+      ref={ref}
+      className={cn("text-sm opacity-90", className)}
+      {...props}
+    />
+  );
 });
 ToastDescription.displayName = ToastPrimitives.Description.displayName;
 
-export { ToastProvider, ToastViewport, Toast, ToastTitle, ToastDescription, ToastClose, ToastAction };
+export {
+  ToastProvider,
+  ToastViewport,
+  Toast,
+  ToastTitle,
+  ToastDescription,
+  ToastClose,
+  ToastAction,
+};

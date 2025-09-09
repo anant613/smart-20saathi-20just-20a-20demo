@@ -30,18 +30,34 @@ const addToRemoveQueue = (toastId) => {
 export const reducer = (state, action) => {
   switch (action.type) {
     case "ADD_TOAST":
-      return { ...state, toasts: [action.toast, ...state.toasts].slice(0, TOAST_LIMIT) };
+      return {
+        ...state,
+        toasts: [action.toast, ...state.toasts].slice(0, TOAST_LIMIT),
+      };
     case "UPDATE_TOAST":
-      return { ...state, toasts: state.toasts.map((t) => (t.id === action.toast.id ? { ...t, ...action.toast } : t)) };
+      return {
+        ...state,
+        toasts: state.toasts.map((t) =>
+          t.id === action.toast.id ? { ...t, ...action.toast } : t,
+        ),
+      };
     case "DISMISS_TOAST": {
       const { toastId } = action;
       if (toastId) addToRemoveQueue(toastId);
       else state.toasts.forEach((t) => addToRemoveQueue(t.id));
-      return { ...state, toasts: state.toasts.map((t) => (t.id === toastId || toastId === undefined ? { ...t, open: false } : t)) };
+      return {
+        ...state,
+        toasts: state.toasts.map((t) =>
+          t.id === toastId || toastId === undefined ? { ...t, open: false } : t,
+        ),
+      };
     }
     case "REMOVE_TOAST":
       if (action.toastId === undefined) return { ...state, toasts: [] };
-      return { ...state, toasts: state.toasts.filter((t) => t.id !== action.toastId) };
+      return {
+        ...state,
+        toasts: state.toasts.filter((t) => t.id !== action.toastId),
+      };
     default:
       return state;
   }
@@ -57,7 +73,8 @@ function dispatch(action) {
 
 function toast({ ...props }) {
   const id = genId();
-  const update = (props2) => dispatch({ type: "UPDATE_TOAST", toast: { ...props2, id } });
+  const update = (props2) =>
+    dispatch({ type: "UPDATE_TOAST", toast: { ...props2, id } });
   const dismiss = () => dispatch({ type: "DISMISS_TOAST", toastId: id });
   dispatch({
     type: "ADD_TOAST",
@@ -82,7 +99,11 @@ function useToast() {
       if (index > -1) listeners.splice(index, 1);
     };
   }, [state]);
-  return { ...state, toast, dismiss: (toastId) => dispatch({ type: "DISMISS_TOAST", toastId }) };
+  return {
+    ...state,
+    toast,
+    dismiss: (toastId) => dispatch({ type: "DISMISS_TOAST", toastId }),
+  };
 }
 
 export { useToast, toast };
