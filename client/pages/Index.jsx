@@ -33,6 +33,7 @@ function BusIllustration() {
     <svg aria-hidden className="w-[520px] max-w-[90vw] drop-shadow-xl" viewBox="0 0 520 200" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect x="0" y="120" width="520" height="8" rx="4" fill="#94a3b8" opacity="0.5" />
       <g>
+        {/* Bus */}
         <rect x="40" y="40" width="360" height="100" rx="18" fill="#FFD700" stroke="#b38f00" strokeWidth="3" />
         <rect x="70" y="60" width="80" height="40" rx="6" fill="#1E90FF" />
         <rect x="160" y="60" width="80" height="40" rx="6" fill="#1E90FF" />
@@ -45,23 +46,60 @@ function BusIllustration() {
         <circle cx="320" cy="146" r="10" fill="#9ca3af" />
         <rect x="36" y="124" width="368" height="6" rx="3" fill="#fb923c" />
         <rect x="380" y="84" width="20" height="12" rx="2" fill="#111827" />
+
+        {/* Students waving from windows */}
         <g className="animate-wave" transform="translate(85,58)">
           <circle cx="0" cy="0" r="8" fill="#fde68a" />
-          <rect x="-10" y="8" width="20" height="10" rx="2" fill="#e5e7eb" />
+          <rect x="-10" y="8" width="20" height="10" rx="2" fill="#ffffff" />
           <rect x="-2" y="8" width="4" height="12" fill="#1E90FF" />
           <rect x="10" y="-4" width="4" height="14" rx="2" fill="#fde68a" />
         </g>
         <g className="animate-wave" style={{ animationDelay: "250ms" }} transform="translate(175,58)">
           <circle cx="0" cy="0" r="8" fill="#fde68a" />
-          <rect x="-10" y="8" width="20" height="10" rx="2" fill="#e5e7eb" />
+          <rect x="-10" y="8" width="20" height="10" rx="2" fill="#ffffff" />
           <rect x="-2" y="8" width="4" height="12" fill="#1E90FF" />
           <rect x="10" y="-4" width="4" height="14" rx="2" fill="#fde68a" />
         </g>
         <g className="animate-wave" style={{ animationDelay: "500ms" }} transform="translate(265,58)">
           <circle cx="0" cy="0" r="8" fill="#fde68a" />
-          <rect x="-10" y="8" width="20" height="10" rx="2" fill="#e5e7eb" />
+          <rect x="-10" y="8" width="20" height="10" rx="2" fill="#ffffff" />
           <rect x="-2" y="8" width="4" height="12" fill="#1E90FF" />
           <rect x="10" y="-4" width="4" height="14" rx="2" fill="#fde68a" />
+        </g>
+
+        {/* Students near bus with QR code */}
+        <g transform="translate(430,98)">
+          {/* Student 1 */}
+          <g>
+            <circle cx="0" cy="0" r="7" fill="#facc15" />
+            <rect x="-9" y="6" width="18" height="12" rx="2" fill="#ffffff" stroke="#e5e7eb" />
+            <rect x="-1" y="6" width="2" height="12" fill="#1E90FF" />
+            <rect x="-8" y="18" width="16" height="10" rx="2" fill="#1e3a8a" />
+          </g>
+          {/* Student 2 */}
+          <g transform="translate(24,0)">
+            <circle cx="0" cy="0" r="7" fill="#facc15" />
+            <rect x="-9" y="6" width="18" height="12" rx="2" fill="#ffffff" stroke="#e5e7eb" />
+            <rect x="-1" y="6" width="2" height="12" fill="#1E90FF" />
+            <rect x="-8" y="18" width="16" height="10" rx="2" fill="#1e3a8a" />
+          </g>
+          {/* Student 3 */}
+          <g transform="translate(48,0)">
+            <circle cx="0" cy="0" r="7" fill="#facc15" />
+            <rect x="-9" y="6" width="18" height="12" rx="2" fill="#ffffff" stroke="#e5e7eb" />
+            <rect x="-1" y="6" width="2" height="12" fill="#1E90FF" />
+            <rect x="-8" y="18" width="16" height="10" rx="2" fill="#1e3a8a" />
+          </g>
+        </g>
+
+        {/* QR board */}
+        <g transform="translate(480,72)">
+          <rect x="0" y="0" width="30" height="30" rx="4" fill="#ffffff" stroke="#111827" />
+          <rect x="4" y="4" width="6" height="6" fill="#111827" />
+          <rect x="20" y="4" width="6" height="6" fill="#111827" />
+          <rect x="4" y="20" width="6" height="6" fill="#111827" />
+          <rect x="16" y="16" width="4" height="4" fill="#111827" />
+          <rect x="24" y="24" width="2" height="2" fill="#111827" />
         </g>
       </g>
     </svg>
