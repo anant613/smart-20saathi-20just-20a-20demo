@@ -94,7 +94,7 @@ export default function Register() {
 
       <div className="w-full max-w-2xl bg-white bg-opacity-95 rounded-3xl shadow-2xl p-8 z-10">
         <h1 className="text-3xl font-extrabold text-center text-purple-700 mb-6">
-          🎉 Register on BusTrackr
+          🎉 Register on Smart Saathi
         </h1>
 
         {/* role switcher */}

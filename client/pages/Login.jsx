@@ -1,20 +1,31 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // ✅ import navigate
 
 export default function Login() {
   const [role, setRole] = useState("admin");
   const [phoneSent, setPhoneSent] = useState(false);
+  const navigate = useNavigate(); // ✅ hook for navigation
 
   const handleLogin = (e) => {
     e.preventDefault();
+
     if (role === "admin") {
-      console.log("Admin login flow");
+      console.log("✅ Admin login success");
+      navigate("/admin-dashboard");   // 🔥 this makes it work
     } else if (role === "attendant") {
       console.log(phoneSent ? "Attendant Verify OTP" : "Attendant Send OTP");
       setPhoneSent(true);
+      // later: navigate("/attendant-dashboard");
     } else if (role === "parent") {
-      console.log(phoneSent ? "Parent Verify OTP" : "Parent Send OTP");
-      setPhoneSent(true);
+      if (phoneSent) {
+        console.log("✅ Parent Verify OTP success");
+        navigate("/parent-dashboard");  // already working ✅
+      } else {
+        console.log("📲 Parent Send OTP");
+        setPhoneSent(true);
+      }
     }
+    
   };
 
   return (
@@ -36,6 +47,7 @@ export default function Login() {
             {["admin", "attendant", "parent"].map((r) => (
               <button
                 key={r}
+                type="button"
                 className={`flex-1 py-2 capitalize font-semibold ${
                   role === r
                     ? "bg-blue-600 text-white"
@@ -46,7 +58,11 @@ export default function Login() {
                   setPhoneSent(false);
                 }}
               >
-                {r === "admin" ? "School Admin" : r === "attendant" ? "Bus Attendant" : "Parent"}
+                {r === "admin"
+                  ? "School Admin"
+                  : r === "attendant"
+                  ? "Bus Attendant"
+                  : "Parent"}
               </button>
             ))}
           </div>
@@ -121,9 +137,15 @@ export default function Login() {
       {/* Footer */}
       <footer className="p-4 bg-white bg-opacity-80 text-center text-sm text-gray-700 z-10">
         <div className="space-x-4">
-          <a href="/privacy" className="hover:text-blue-600">Privacy Policy</a>
-          <a href="/terms" className="hover:text-blue-600">Terms of Service</a>
-          <a href="/support" className="hover:text-blue-600">Contact Support</a>
+          <a href="/privacy" className="hover:text-blue-600">
+            Privacy Policy
+          </a>
+          <a href="/terms" className="hover:text-blue-600">
+            Terms of Service
+          </a>
+          <a href="/support" className="hover:text-blue-600">
+            Contact Support
+          </a>
         </div>
       </footer>
     </div>
